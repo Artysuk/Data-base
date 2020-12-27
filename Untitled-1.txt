@@ -1,0 +1,52 @@
+class Person:
+  def setData(self,name,mobile,personal_code):
+    self.name = name
+    self.mobile = mobile
+    self.personal_code = personal_code
+
+  def __init__(self,name,mobile,personal_code):
+    self.name = name
+    self.mobile = mobile
+    self.personal_code = personal_code
+  
+  def __str__(self):
+    return f'{self.name} {self.mobile} {self.personal_code}\n'
+
+class DataBase:
+  persons = []
+
+  def get(self, name):
+    for person in self.persons:
+      if person.name == name:
+        return person
+
+  def addPerson(self, name, mobile, personal_code):
+    newPerson = Person(name, mobile, personal_code)
+    self.persons.append(newPerson)
+
+  def delete(self,personal_code):
+    # self.persons = [person for person in self.persons if personal_code != person.personal_code]
+    # self.persons = list(filter(lambda person: personal_code in person.__dict__.items(), self.persons))
+    pass
+  def update(updatedPerson):
+    pass
+
+  def __str__(self):
+    text = ''
+    for person in self.persons:
+      text += str(person)
+    
+    return text 
+  
+#
+# SCRIPT ZONE
+#
+
+database = DataBase()
+
+database.addPerson("Lexa", "+37256333222", 50302130213924)
+database.addPerson("Vanya", "+37256555666" , 123912492189213)
+personLexa = database.get("Lexa")
+print(database)
+database.delete(50302130213924)
+print(database)
