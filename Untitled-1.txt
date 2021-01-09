@@ -29,6 +29,7 @@ class DataBase:
     # self.persons = list(filter(lambda person: personal_code in person.__dict__.items(), self.persons))
     pass
   def update(updatedPerson):
+    question = input("1","2","3")
      if question == "1":
         name = input("Write your name and don`t use any other symbols or integers: ")
         if name.isalpha():
