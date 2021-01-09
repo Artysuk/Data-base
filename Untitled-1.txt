@@ -29,7 +29,33 @@ class DataBase:
     # self.persons = list(filter(lambda person: personal_code in person.__dict__.items(), self.persons))
     pass
   def update(updatedPerson):
-    pass
+     if question == "1":
+        name = input("Write your name and don`t use any other symbols or integers: ")
+        if name.isalpha():
+          self.persons.append(Person(name,x[1],x[2]))
+          break
+        else:
+          continue
+      elif question == "2":
+        prefix = input("Write your prefix without using + :  ")
+        mobile = input("Write your number without using any symbols or letters:")
+        if prefix.isdigit() and mobile.isdigit():
+          self.persons.append(Person(x[0],f"+{prefix}{mobile}",x[2]))
+        else:
+          continue
+        break
+      elif question == "3":
+        personal_code = input("Write your personal_code without using any symbols or letters:")
+        if personal_code.isdigit():
+          self.persons.append(Person(x[0],x[1],input("personal_code:")))
+        else:
+          continue    
+      else:
+        continue
+    x.clear()
+    person.clear()
+    self.persons = [person for person in self.persons if personal_code != person.personal_code]
+
 
   def __str__(self):
     text = ''
