@@ -40,8 +40,8 @@ class DataBase:
       elif question == "2":
         prefix = input("Write your prefix without using + :  ")
         mobile = input("Write your number without using any symbols or letters:")
-        if prefix.isdigit() and mobile.isdigit():
-          self.persons.append(Person(x[0],f"+{prefix}{mobile}",x[2]))
+        if mobile.isdigit():
+          self.persons.append(Person(x[0],f"{mobile}",x[2]))
         else:
           continue
         break
